@@ -81,11 +81,12 @@ function returnCounter(number = 0) {
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
 function returnArgumentsArray() {
-    var args = [];
+    /*var args = [];
     for (var i = 0; i < arguments.length; i++) {
         args[i] = arguments[i];
     }
-    return args;
+    return args;*/
+    return [...arguments];
 }
 
 /*
@@ -104,12 +105,9 @@ function returnArgumentsArray() {
    console.log(newSum()) выведет 6
  */
 
-function bindFunction(fn, arg1, arg2) {
-    /*return function name() {
-        return fn.apply(arg1, arg2);
-    };*/
-    var bound = bindFunction.bind();
-    return bound;
+function bindFunction(fn, ...args) {
+
+    return fn.bind(null, ...args);
 
 }
 
