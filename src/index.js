@@ -81,11 +81,13 @@ function returnCounter(number = 0) {
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
 function returnArgumentsArray() {
+    // Это один из методов решения (цикл)
     /*var args = [];
     for (var i = 0; i < arguments.length; i++) {
         args[i] = arguments[i];
     }
     return args;*/
+    // Это второй метод решения с помощью spread оператора
     return [...arguments];
 }
 
